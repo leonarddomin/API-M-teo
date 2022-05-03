@@ -1,0 +1,12 @@
+.container-fluid{
+    width: 500px;
+    height: 700px; 
+    background-image: url(../img/morning.jpg);
+    background-size: contain; 
+    margin-top: 5px;
+    display: grid;
+
+} 
+body{
+    background-color: lightblue;
+}
