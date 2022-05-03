@@ -18,54 +18,30 @@
                 <input type="text" v-model="cityName">
                 <button @click="makeRequest()" class="btn-primary">Mettre à jour</button>
             </div>
-            <div class="col">
-                <p>Température : {{temp}}</p>
-                <p>Ressenti : {{feels}}</p>
-                <p>Minimale : {{min}}</p>
-                <p>Maximale : {{max}}</p>
-                <p>Pression : {{pression}}</p>
-                <p>Humidité : {{humidity}}</p>
-            </div>
         </div>
         <div class="row">
-            <div class="col">
+                <div class="col">
+                    <h1>{{temp}} °</h1>
+                    <h2>{{cityName}}</h2>
+                </div>
             </div>
-            <div class="col">
-                
+            <div class="row">
+                <div class="col">
+                    <p>Ressenti : {{feels}} °</p>
+                    <p>Pression : {{pression}} pa</p>
+                </div>
+                <div class="col">
+                    <p>Minimale : {{min}} °</p>
+                    <p>Maximale : {{max}} °</p>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                
+            <div class="row">
+                <div class="col">
+                    <p>Humidité : {{humidity}}%</p>
+                </div>
             </div>
-            <div class="col">
-                
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                
-            </div>
-            <div class="col">
-                
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                
-            </div>
-            <div class="col">
-                
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                
-            </div>
-            <div class="col">
-                
-            </div>
-        </div>
+        </div>    
+
     </div>
 </body>
 </html>
