@@ -40,18 +40,52 @@
                     <p>Humidité : {{humidity}}%</p>
                 </div>
             </div>
-            <form method="post" action="">
-                <label>Nom de la Ville</label>
-                <input> 
-                <label>Degré</label>
-                <input>
-                <label>Ressenti</label>
-                <input> 
-                <label>Pression</label>
-                <input> 
-                <label>Minimal</label>
-            </form>
-        </div>    
+        </div>
+        <form id="form" method="post" action="">
+            <div class="row">
+              <label for="Ville" class="col-form-label">Nom de la ville</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="town">
+              </div>
+            </div>
+            <div class="row">
+              <label for="temp" class="col-form-label">Température</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="degres">
+              </div>
+            </div>
+            <div class="row">
+                <label for="Ressenti" class="col-form-label">Ressenti</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="feel">
+                </div>
+            </div>
+            <div class="row">
+                <label for="Ressenti" class="col-form-label">Pression</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="pressure">
+                </div>
+            </div>
+            <div class="row">
+                <label for="Ressenti" class="col-form-label">Minimale</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="min">
+                </div>
+            </div>
+            <div class="row">
+                <label for="Ressenti" class="col-form-label">Maximale</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="max">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="Ressenti" class="col-form-label">Humidité</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="humidity">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+        </form>
     </div>
 </body>
 </html>
