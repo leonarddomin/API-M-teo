@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="./assets/css/style.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js" defer></script> 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js" defer></script>
     <script src="assets/js/app.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Météo</title>
 </head>
+
 <body>
+    <!-- Début application -->
     <div class="container-fluid" id="app">
         <div class="row">
             <div class="col">
@@ -21,78 +25,58 @@
             </div>
         </div>
         <div class="row">
-                <div class="col">
-                    <h1>{{celsius()}}</h1>
-                    <h1>{{temp}}°</h1>
-                    <h2>{{cityName}}</h2>
-                </div>
+            <div class="col">
+                <h1>{{celsius()}}</h1>
+                <h1>{{temp}}°</h1>
+                <h2>{{cityName}}</h2>
             </div>
-            <div class="row">
-                <div class="col">
-                    <p>Ressenti : {{feels}} °</p>
-                    <p>Pression : {{pression}} pa</p>
-                </div>
-                <div class="col">
-                    <p>Minimale : {{min}} °</p>
-                    <p>Maximale : {{max}} °</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p>Humidité : {{humidity}}%</p>
-                </div>
-            </div> 
-            <div class="row">
-                <div class="col">
-                    <button @click="" class="btn-success">Partagé</button>
-                </div>
-            </div> 
         </div>
-        <form id="form" method="post" action="">
+        <div class="row">
+            <div class="col">
+                <p>Ressenti : {{feels}} °</p>
+                <p>Pression : {{pression}} pa</p>
+            </div>
+            <div class="col">
+                <p>Minimale : {{min}} °</p>
+                <p>Maximale : {{max}} °</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>Humidité : {{humidity}}%</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button @click="displayForm" class="btn-success">Partagé</button>
+            </div>
+        </div>
+        <form id="form" method="post" action="" v-if="display">
             <div class="row">
-              <label for="Ville" class="col-form-label">Nom de la ville</label>
-              <div class="col-sm-10">
-                <input type="email" class="form-control" id="town">
-              </div>
+                <label for="email" class="col-form-label">Email</label>
+                <div class="col-sm-3">
+                    <input type="email" class="form-control" id="mail">
+                </div>
             </div>
             <div class="row">
-              <label for="temp" class="col-form-label">Température</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="degres">
-              </div>
-            </div>
-            <div class="row">
-                <label for="Ressenti" class="col-form-label">Ressenti</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="feel">
+                <label for="message" class="col-form-label">Message</label>
+                <div class="cols">
+                    <textarea type="textarea" class="form-group" rows="3" id="data"></textarea>
                 </div>
             </div>
             <div class="row mb-3">
-                <label for="Ressenti" class="col-form-label">Pression</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="pressure">
-                </div>
-            </div>
-            <div class="row">
-                <label for="Ressenti" class="col-form-label">Minimale</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="min">
-                </div>
-            </div>
-            <div class="row">
-                <label for="Ressenti" class="col-form-label">Maximale</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="max">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label for="Ressenti" class="col-form-label">Humidité</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="humidity">
+                <label for="exampleFormControlTextarea1" class="col-form-label">Données</label>
+                <div class="cols">
+                    <textarea type="textarea" class="form-group" rows="3" id="data"></textarea>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Envoyer</button>
         </form>
     </div>
+
+
+    </div>
+    <!-- Fin application -->
 </body>
+
 </html>
