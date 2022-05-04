@@ -51,40 +51,41 @@
                 <button @click="displayForm" class="btn-success">Partagé</button>
             </div>
         </div>
-        <form id="form" method="post" action="" v-if="display">
-            <div class="row">
-                <label for="email" class="col-form-label">Email</label>
-                <div class="col-sm-3">
-                    <input type="email" class="form-control" id="mail">
-                </div>
+        <div class="row">
+            <div class="col">
+                <form id="form" method="post" action="" v-if="display">
+                    <div class="row">
+                        <label for="email" class="col-form-label">Email</label>
+                        <div class="col-sm-3">
+                            <input type="email" class="form-control" id="mail">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="message" class="col-form-label">Message</label>
+                        <div class="cols">
+                            <textarea type="textarea" class="form-group" rows="3" id="data"></textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="exampleFormControlTextarea1" class="col-form-label">Données</label>
+                        <div class="cols">
+                            <textarea class="form-control" id="data" rows="6">
+                                Nom de la ville: {{cityName}} 
+                                Température: {{temp}} °
+                                Ressenti : {{feels}} ° 
+                                Pression : {{pression}} pa
+                                Minimale : {{min}} °
+                                Maximale : {{max}} °
+                                Humidité : {{humidity}}%
+                            </textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </form>
             </div>
-            <div class="row">
-                <label for="message" class="col-form-label">Message</label>
-                <div class="cols">
-                    <textarea type="textarea" class="form-group" rows="3" id="data"></textarea>
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label for="exampleFormControlTextarea1" class="col-form-label">Données</label>
-                <div class="cols">
-                <textarea class="form-control" id="data" rows="6">
-                    Nom de la ville: {{cityName}} 
-                    Température: {{temp}} °
-                    Ressenti : {{feels}} ° 
-                    Pression : {{pression}} pa
-                    Minimale : {{min}} °
-                    Maximale : {{max}} °
-                    Humidité : {{humidity}}%
-                </textarea>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Envoyer</button>
-        </form>
-    </div>
-
-
-    </div>
-    <!-- Fin application -->
+        </div>
 </body>
+
+<!-- Fin application -->
 
 </html>
