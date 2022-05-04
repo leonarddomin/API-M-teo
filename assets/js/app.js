@@ -9,7 +9,7 @@ let appVue = new Vue ({
         feels:'',
         pression:'',
         humidity:'',
-        regex: /^[A-Za-z]+$/,
+        regex: /[^A-Za-z]+$/,
         error:false
 
     },
@@ -33,7 +33,7 @@ let appVue = new Vue ({
             return this.error = true
         }
         else {
-            return this.error
+            return this.error = false
         }
       }
     },
