@@ -15,13 +15,14 @@
     <div class="container-fluid" id="app">
         <div class="row">
             <div class="col">
-                <input type="text" v-model="cityName">
+                <input type="text" @input="check()" v-model="cityName">
                 <button @click="makeRequest()" class="btn-primary">Mettre à jour</button>
             </div>
         </div>
         <div class="row">
                 <div class="col">
-                    <h1>{{celsius()}}°</h1>
+                    <h1>{{celsius()}}</h1>
+                    <h1>{{temp}}°</h1>
                     <h2>{{cityName}}</h2>
                 </div>
             </div>
