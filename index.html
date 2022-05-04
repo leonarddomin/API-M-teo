@@ -21,7 +21,7 @@
         </div>
         <div class="row">
                 <div class="col">
-                    <h1>{{temp}} °</h1>
+                    <h1>{{celsius()}}°</h1>
                     <h2>{{cityName}}</h2>
                 </div>
             </div>
@@ -40,8 +40,18 @@
                     <p>Humidité : {{humidity}}%</p>
                 </div>
             </div>
+            <form method="post" action="">
+                <label>Nom de la Ville</label>
+                <input> 
+                <label>Degré</label>
+                <input>
+                <label>Ressenti</label>
+                <input> 
+                <label>Pression</label>
+                <input> 
+                <label>Minimal</label>
+            </form>
         </div>    
-
     </div>
 </body>
 </html>

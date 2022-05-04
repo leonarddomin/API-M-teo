@@ -17,13 +17,14 @@ let appVue = new Vue ({
           .then(response => this.request = response.data.main)
           this.min = parseInt(this.request.temp_min-274.15)
           this.max = parseInt(this.request.temp_max-274.15)
-          this.temp = parseInt(this.request.temp-274.15)
           this.feels = parseInt(this.request.feels_like-274.15)
           this.pression = this.request.pressure
           this.humidity = this.request.humidity
           this.cityame = this.request.name
       },
-      
+      celsius() {
+          return  this.temp = parseInt(this.request.temp-274.15)
+      }
     },
     
     
