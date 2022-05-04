@@ -55,7 +55,8 @@
             <div class="row">
                 <label for="email" class="col-form-label">Email</label>
                 <div class="col-sm-3">
-                    <input type="email" class="form-control" id="mail">
+                    <input type="email" class="form-control" @input="checkMail()" v-model="emailName" id="mail">
+                    <span v-if="errorMail === true" class="text-danger">Nom de ville Non valide !</span>
                 </div>
             </div>
             <div class="row">

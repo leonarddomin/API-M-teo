@@ -2,6 +2,7 @@ let appVue = new Vue({
     el: '#app',
     data: {
         cityName: '',
+        emailName:'',
         request: '',
         min: '',
         max: '',
@@ -12,13 +13,15 @@ let appVue = new Vue({
         regex: /[^A-Za-z]+$/,
         error: false,
         display: false,
+        regexMail: /[^a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+        errorMail: false
 
     },
     methods: {
         makeRequest() {
             axios.get('https://api.openweathermap.org/data/2.5/weather?q=' + this.cityName + '&appid=09428684b8272cbafc39db375ecb991d')
                 .then(response => this.request = response.data.main)
-            this.cityame = this.request.name
+            
         },
         displayForm: function() {
             this.display = !this.display
@@ -38,6 +41,14 @@ let appVue = new Vue({
             }
             else {
                 return this.error = false
+            }
+        },
+        checkMail() {
+            if (this.regexMail.test(this.emailName)) {
+                return this.errorMail = true
+            }
+            else {
+                return this.errorMail = false
             }
         }
     },
